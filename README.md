@@ -38,3 +38,35 @@ Copy Data to new table
 INSERT INTO club_member_info_CLEANED 
 select * from club_member_info ;
 ```
+## 3. Check the duplicate
+Write the sript to check the dup;icate
+```
+SELECT 
+	full_name
+	, age
+	, martial_status 
+	, email
+	, phone
+	, full_address
+	, job_title
+	, membership_date
+	, COUNT(*) as count_dulicate
+FROM club_member_info_CLEANED cmic 
+GROUP BY 
+	full_name
+	, age
+	, martial_status 
+	, email
+	, phone
+	, full_address
+	, job_title
+	, membership_date
+HAVING COUNT (*) >1;
+```
+
+
+
+
+
+
+
